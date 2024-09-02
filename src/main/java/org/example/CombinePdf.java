@@ -7,6 +7,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class CombinePdf {
     private final String caminhoPasta;
@@ -22,7 +23,9 @@ public class CombinePdf {
 
         if(pasta.isDirectory()) {
             List<File> pdfFiles = List.of(Objects.requireNonNull(pasta.listFiles()));
-            for (File arq : pdfFiles) {
+            List<File> pdfList = pdfFiles.stream().sorted().collect(Collectors.toList());
+            System.out.println(pdfList);
+            for (File arq : pdfList) {
                 this.merger.addSource(new File(String.valueOf(arq)));
             }
             this.merger.setDestinationFileName("pdf_combinado.pdf");
