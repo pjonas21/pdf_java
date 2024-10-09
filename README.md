@@ -15,7 +15,7 @@ Para o projeto em quaestão foi pensada uma interface simples e de fácil entend
 
 
 # Tecnologias utilizadas
-## Back end
+## Linguagem e Bibliotecas
 - Java
 - PDFBox
 - Maven
