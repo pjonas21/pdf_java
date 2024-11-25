@@ -32,7 +32,7 @@ public class CombinePdf {
             for (File arq : pdfFiles) {
                 this.merger.addSource(new File(String.valueOf(arq)));
             }
-            this.merger.setDestinationFileName(this.newFileName + ".pdf");
+            this.merger.setDestinationFileName(pasta.getAbsolutePath() + File.separator + this.newFileName + ".pdf");
             try {
                 this.merger.mergeDocuments(null);
                 System.out.println("PDF mesclado com sucesso.");
